@@ -7,7 +7,7 @@ class Class
     
     class_eval %Q{
       def #{attr_name}=(value)
-        @#{attr_name}_history = [nil]
+        @#{attr_name}_history ||= []
         @#{attr_name}_history << @#{attr_name}
         @#{attr_name} = value
       end
